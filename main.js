@@ -83,3 +83,27 @@ console.log(new Date().getFullYear())
 const over21 = birthdate => (new Date().getFullYear() - birthdate) >= 21;
 
 console.log(arrayOfPersons.filter(el => !over21(parseInt(el.birthDate.slice(-4)))))
+
+// find() and findIndex() below
+
+const arr = [1, 2, 3, 4, 5, 6]
+
+function find(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      return arr[i]
+    }
+  }
+}
+
+console.log (find(arr, num => num === 3))
+
+function findIndex(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) { 
+      return i
+    }
+  }
+}
+
+console.log (findIndex(arr, num => num === 5))
